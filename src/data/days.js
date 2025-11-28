@@ -15,7 +15,11 @@ Your birthday is close, and I want to wish you a happy birthday from now, I want
 I hope you have a nice rest of the day
 
 I toh love you only`,
-    coupon: "1 warm hug redeemable anytime 🤗"
+    coupon: `A little gift card for any sweets or food you want 🍬🍰  
+(remember the sweets you showed me — you can even share with friends!)
+
+Gift card link:  
+https://ubereu.launchgiftcards.com/order/4235469c-1729-4e9f-a7ea-c265d0412cb3`
   },
   {
     id: 2,
