@@ -9,7 +9,12 @@ export const days = [
     ghibliImage: "/images/day1-ghibli.png",
     image: "/images/day1.jpg",
 
-    message: "Just one word, but it’s ours ❤️",
+    message: "Woohoo yeah, correct, toh correct only
+Your birthday is close, and I want to wish you a happy birthday from now, I want to celebrate with this message the good memories I have with you, like this in Marken-Voli.
+
+I hope you have a nice rest of the day
+
+I toh love you only",
     coupon: "1 warm hug redeemable anytime 🤗"
   },
   {
