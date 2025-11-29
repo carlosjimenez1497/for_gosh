@@ -6,8 +6,8 @@ export const days = [
     answer: "only",
 
     // Add these:
-    ghibliImage: "/images/day1-ghibli.png",
-    image: "/images/day1.jpg",
+    ghibliImage: ["/images/day1-ghibli.png"],
+    image: ["/images/day1.jpg"],
 
     message: `Woohoo yeah, correct, toh correct only
       Your birthday is close, and I want to wish you a happy birthday from now, I want to celebrate with this message the good memories I have with you, like this in Marken-Voli.
@@ -24,12 +24,27 @@ export const days = [
   {
     id: 2,
     date: "2025-11-29",
-    ghibliImage: null,
-    question: null,
-    answer: null,
-    image: null,
-    message: null,
-    coupon: null
+    ghibliImage: ["/images/day2-ghibli1.png",
+      "/images/day2-ghibli2.png",
+      "/images/day2-ghibli3.png",
+      "/images/day2-ghibli4.png",
+      "/images/day2-ghibli5.png"
+    ],
+    question: `Best thing in this place (small):
+    52°17'58''N 4°57'22'E`,
+    answer: "shivi",
+    image: ["/images/day2-1.jpg",
+      "/images/day2-2.jpg",
+      "/images/day2-3.jpg",
+      "/images/day2-4.png",
+      "/images/day2-5.jpg"
+    ],
+    message: `You started this year in a new place and you have met friends 
+      that became like family, that are your people. You make their life better and they love you. 
+      Your smile lights up their days as it lights up my days.
+
+      I wish you a day full of love and smiles. Happy Vuelta al sol only`,
+    coupon: `Cute dancing whenever you ask for, to use this week that I am there`
   },
   {
     id: 3,

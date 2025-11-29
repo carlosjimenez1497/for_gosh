@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function Reveal({ data, stage, onRevealReal, onRevealGhibli }) {
+  // Coupon state
   const [couponRevealed, setCouponRevealed] = useState(
     localStorage.getItem(`coupon-${data.id}`) === "true"
   );
@@ -10,17 +11,66 @@ export default function Reveal({ data, stage, onRevealReal, onRevealGhibli }) {
     setCouponRevealed(true);
   }
 
+  // --- NEW: images array depending on stage ---
+  const imgArray =
+    stage === "ghibli"
+      ? data.ghibliImages || []
+      : data.images || [];
+
+  // Fallback for old format (single string)
+  const normalizedImages =
+    typeof imgArray === "string" ? [imgArray] : imgArray;
+
+  // --- NEW: carousel state ---
+  const [index, setIndex] = useState(0);
+
+  function nextImage() {
+    setIndex((prev) => (prev + 1) % normalizedImages.length);
+  }
+
+  function prevImage() {
+    setIndex((prev) =>
+      prev === 0 ? normalizedImages.length - 1 : prev - 1
+    );
+  }
+
   return (
     <div className="text-center">
 
       {/* GHIBLI MODE */}
       {stage === "ghibli" && (
         <div>
-          <img
-            src={data.ghibliImage}
-            alt=""
-            className="w-64 mx-auto rounded-xl mb-4 opacity-90 shadow-md"
-          />
+
+          {/* --- Carousel container --- */}
+          <div className="relative w-64 mx-auto mb-4">
+            <img
+              src={normalizedImages[index]}
+              className="w-64 mx-auto rounded-xl shadow-md opacity-90"
+              alt=""
+            />
+
+            {/* Left arrow */}
+            {normalizedImages.length > 1 && (
+              <button
+                onClick={prevImage}
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70
+                           p-2 rounded-full shadow-md hover:bg-opacity-100 transition"
+              >
+                ←
+              </button>
+            )}
+
+            {/* Right arrow */}
+            {normalizedImages.length > 1 && (
+              <button
+                onClick={nextImage}
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70
+                           p-2 rounded-full shadow-md hover:bg-opacity-100 transition"
+              >
+                →
+              </button>
+            )}
+          </div>
 
           <button
             onClick={onRevealReal}
@@ -35,13 +85,38 @@ export default function Reveal({ data, stage, onRevealReal, onRevealGhibli }) {
       {/* REAL MODE */}
       {stage === "real" && (
         <div>
-          <img
-            src={data.image}
-            alt=""
-            className="w-64 mx-auto rounded-xl mb-4 shadow-md"
-          />
+          
+          {/* --- Carousel container --- */}
+          <div className="relative w-64 mx-auto mb-4">
+            <img
+              src={normalizedImages[index]}
+              className="w-64 mx-auto rounded-xl shadow-md"
+              alt=""
+            />
 
-          {/* Back button */}
+            {/* Arrows */}
+            {normalizedImages.length > 1 && (
+              <>
+                <button
+                  onClick={prevImage}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70
+                             p-2 rounded-full shadow-md hover:bg-opacity-100 transition"
+                >
+                  ←
+                </button>
+
+                <button
+                  onClick={nextImage}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70
+                             p-2 rounded-full shadow-md hover:bg-opacity-100 transition"
+                >
+                  →
+                </button>
+              </>
+            )}
+          </div>
+
+          {/* Back to Ghibli */}
           <button
             onClick={onRevealGhibli}
             className="bg-pink-200 hover:bg-pink-300 transition text-pink-700 
@@ -66,7 +141,7 @@ export default function Reveal({ data, stage, onRevealReal, onRevealGhibli }) {
             </button>
           ) : (
             <div className="border-2 border-pink-300 rounded-xl p-4 bg-pink-50 
-                            text-pink-700 font-semibold mt-3 shadow-sm">
+                            text-pink-700 font-semibold mt-3 shadow-sm whitespace-pre-line">
               🎀 Coupon: {data.coupon}
             </div>
           )}
