@@ -39,7 +39,8 @@ export const days = [
       "/images/day2-4.png",
       "/images/day2-5.jpg"
     ],
-    message: `You started this year in a new place and you have met friends 
+    message: `Correct, that little cutie!
+      You started this year in a new place and you have met friends 
       that became like family, that are your people. You make their life better and they love you. 
       Your smile lights up their days as it lights up my days.
 
