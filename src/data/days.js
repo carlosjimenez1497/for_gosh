@@ -30,7 +30,7 @@ export const days = [
       "/images/day2-ghibli4.png",
       "/images/day2-ghibli5.png"
     ],
-    question: `Best thing in this place (small):
+    question: `Cute thing in this place (small):
     52°17'58''N 4°57'22'E`,
     answer: "shivi",
     image: ["/images/day2-1.jpg",
