@@ -10,16 +10,16 @@ export const days = [
     image: "/images/day1.jpg",
 
     message: `Woohoo yeah, correct, toh correct only
-Your birthday is close, and I want to wish you a happy birthday from now, I want to celebrate with this message the good memories I have with you, like this in Marken-Voli.
+      Your birthday is close, and I want to wish you a happy birthday from now, I want to celebrate with this message the good memories I have with you, like this in Marken-Voli.
 
-I hope you have a nice rest of the day
+      I hope you have a nice rest of the day
 
-I toh love you only`,
+      I toh love you only`,
     coupon: `A little gift card for any sweets or food you want 🍬🍰  
-(remember the sweets you showed me — you can even share with friends!)
+      (remember the sweets you showed me — you can even share with friends!)
 
-Gift card link:  
-https://ubereu.launchgiftcards.com/order/4235469c-1729-4e9f-a7ea-c265d0412cb3`
+      Gift card link:  
+      https://ubereu.launchgiftcards.com/order/4235469c-1729-4e9f-a7ea-c265d0412cb3`
   },
   {
     id: 2,
